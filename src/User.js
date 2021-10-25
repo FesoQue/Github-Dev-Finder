@@ -53,12 +53,14 @@ const User = ({
             <button
               className={overview === 'timeline' ? 'btn active' : 'btn'}
               onClick={() => handleClick('timeline')}
+              disabled={overview === 'timeline' && isActive}
             >
               <i className='far fa-eye'></i> Timeline
             </button>
             <button
               className={overview === 'about' ? 'btn active' : 'btn'}
               onClick={() => handleClick('about')}
+              disabled={overview === 'about' && isActive}
             >
               <i className='fas fa-user'></i> About
             </button>
