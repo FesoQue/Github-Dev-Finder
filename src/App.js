@@ -19,7 +19,7 @@ function App() {
       setUser([data]);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      setLoading(true);
     }
   };
 
