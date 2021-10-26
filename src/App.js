@@ -57,7 +57,7 @@ function App() {
         <header>
           <div className='container'>
             <h1>
-              <a href='#'>DevPals</a>
+              <a href='#'>DevPadi</a>
             </h1>
           </div>
         </header>
