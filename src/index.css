@@ -203,13 +203,13 @@ button img {
 .desc {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
 .desc:last-child {
   margin-bottom: 0;
 }
 .desc span {
+  margin-right: 1.5rem;
   color: #697c9a;
 }
 /* footer {
