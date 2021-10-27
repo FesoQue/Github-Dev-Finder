@@ -85,7 +85,7 @@ function App() {
           <div className='d-flex container'>
             {/* logo */}
             <h1>
-              <a href='#'>DevPals</a>
+              <a href='#'>DevPadi</a>
             </h1>
             {/* message */}
             <div className='greetings'>

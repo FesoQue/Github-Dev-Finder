@@ -25,7 +25,7 @@ export const About = ({ location, twitter, update, created }) => {
         </span>
         <div>
           <p>
-            <Moment date={created} format='DD MMM Y' />
+           Joined <Moment date={created} format='DD MMM Y' />
           </p>
         </div>
       </div>
