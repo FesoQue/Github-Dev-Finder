@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { Timeline } from './Timeline';
 import { About } from './About';
 
@@ -13,7 +13,6 @@ const User = ({
   followers,
   following,
   location,
-  url,
   twitter_username,
   updated_at,
   html_url,

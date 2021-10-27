@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import User from './User';
-// import ICON_MOON from './images/icon-moon.svg';
-// import ICON_SUN from './images/icon-sun.svg';
 import ICON_SEARCH from './images/icon-search.svg';
 import LOADER from './images/loader.gif';
+import MORNING_ICON from './images/midnight.png';
+import AFTERNOON_ICON from './images/afternoon.png';
+import EVENING_ICON from './images/night.png';
 
 function App() {
   const url = 'https://api.github.com/users/lukas';
@@ -11,6 +12,31 @@ function App() {
   const [user, setUser] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [morning, setMorning] = useState(false);
+  const [afternoon, setAfternoon] = useState(false);
+  const [evening, setEvening] = useState(false);
+  const [workingLate, setWorkingLate] = useState(false);
+
+  const getMessage = () => {
+    const hrs = new Date().getHours();
+    // morning
+    if (hrs >= 0 && hrs < 12) {
+      setMorning(true);
+    }
+    // afternoon
+    if (hrs >= 12 && hrs < 18) {
+      setAfternoon(true);
+      console.log(hrs);
+    }
+    // evening
+    if (hrs >= 18 && hrs < 22) {
+      setEvening(true);
+    }
+    // working late
+    if (hrs > 22) {
+      setWorkingLate(true);
+    }
+  };
 
   const defaultUser = async () => {
     try {
@@ -22,10 +48,6 @@ function App() {
       setLoading(true);
     }
   };
-
-  useEffect(() => {
-    defaultUser();
-  }, []);
 
   const handleName = (e) => {
     const nameValue = e.target.value;
@@ -51,14 +73,45 @@ function App() {
       }, 3000);
     }
   };
+  useEffect(() => {
+    defaultUser();
+    getMessage();
+  }, []);
+
   return (
     <main>
       <div>
         <header>
-          <div className='container'>
+          <div className='d-flex container'>
+            {/* logo */}
             <h1>
               <a href='#'>DevPals</a>
             </h1>
+            {/* message */}
+            <div className='greetings'>
+              {morning ? (
+                <div>
+                  <p>Good Morning,</p>
+                  <img src={MORNING_ICON} alt='icon' />
+                </div>
+              ) : afternoon ? (
+                <div>
+                  <p>Good Morning,</p>
+                  <img src={AFTERNOON_ICON} alt='icon' />
+                </div>
+              ) : evening ? (
+                <div>
+                  <p>Good Evening,</p>
+                  <img src={EVENING_ICON} alt='icon' />
+                </div>
+              ) : workingLate ? (
+                <div>
+                  <p>Night Crawler, 👍</p>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
         </header>
         <form id='form' onSubmit={handleSubmit}>

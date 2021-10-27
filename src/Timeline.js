@@ -33,7 +33,7 @@ export const Timeline = ({ repos, following, followers, lastUpdate }) => {
         <span>
           <i className='fas fa-edit fa-2x' aria-hidden='true'></i>
         </span>
-        <h3>Last Updated</h3>
+        <h3>Last Update</h3>
         <p>
           <Moment date={lastUpdate} format='DD MMM Y' />
         </p>

@@ -45,12 +45,24 @@ header a,
 header p {
   color: #fff;
 }
-header p {
-  font-size: 30px;
+header h1 {
+  font-size: 33px;
 }
-.mode {
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.greetings > div {
   display: flex;
   align-items: center;
+}
+.greetings p {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.greetings img {
+  width: 25px;
 }
 form {
   position: relative;
@@ -112,10 +124,6 @@ button img {
   height: calc(100vh - 200px);
   background-color: #fff;
 }
-/* profile */
-/* .user-profile {
-  height: calc(100vh - 250px);
-} */
 .basic-info {
   background-color: #0079ff;
   text-align: center;
@@ -174,7 +182,8 @@ button img {
 .card {
   padding: 20px;
   grid-column: 1 / 13;
-  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 8px;
 }
 .card span {
