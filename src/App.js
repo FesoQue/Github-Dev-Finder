@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import User from './User';
 import ICON_SEARCH from './images/icon-search.svg';
 import LOADER from './images/loader.gif';
-import MORNING_ICON from './images/midnight.png';
+import MORNING_ICON from './images/morning.png';
 import AFTERNOON_ICON from './images/afternoon.png';
 import EVENING_ICON from './images/night.png';
+import NIGHT_ICON from './images/midnight.png';
 
 function App() {
   const url = 'https://api.github.com/users/lukas';
@@ -26,7 +27,6 @@ function App() {
     // afternoon
     if (hrs >= 12 && hrs < 18) {
       setAfternoon(true);
-      console.log(hrs);
     }
     // evening
     if (hrs >= 18 && hrs < 22) {
@@ -106,7 +106,8 @@ function App() {
                 </div>
               ) : workingLate ? (
                 <div>
-                  <p>Night Crawler, 👍</p>
+                  <p>Night Crawler</p>
+                  <img src={NIGHT_ICON} alt='icon' />
                 </div>
               ) : (
                 ''
