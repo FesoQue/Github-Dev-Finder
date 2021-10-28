@@ -96,7 +96,7 @@ function App() {
                 </div>
               ) : afternoon ? (
                 <div>
-                  <p>Good Morning,</p>
+                  <p>Good Afternoon,</p>
                   <img src={AFTERNOON_ICON} alt='icon' />
                 </div>
               ) : evening ? (
